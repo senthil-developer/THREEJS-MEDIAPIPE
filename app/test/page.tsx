@@ -11,8 +11,8 @@ const setup = () => {
 video = document.getElementById("video") as HTMLVideoElement;
 //@ts-ignore
 navigator.getWebCam = (navigator.moxGetUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.getUserMedia)
- if(navigator.mediaDevices.getUserMedia){
-    navigator.mediaDevices.getUserMedia({
+ if(navigator.mediaDevices?.getUserMedia){
+    navigator.mediaDevices?.getUserMedia({
 video: { width: 300, height: 200}
 }).then((mediaStream) => {
 video.srcObject = mediaStream;
