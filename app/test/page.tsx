@@ -1,12 +1,10 @@
 'use client'
 import { useEffect } from 'react';
 
+let video: HTMLVideoElement;
 
-let video: HTMLVideoElement
-function Video() {
-
+export default function Video() {
 const handleOnChange = () => {
-
 }
 
 const setup = () => {
@@ -37,5 +35,3 @@ return (
 );
 
 }
-
-export default Video;
