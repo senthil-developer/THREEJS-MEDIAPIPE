@@ -25,10 +25,11 @@ const Video: React.FC = () => {
     };
 
     // Check if the browser supports WebRTC
-    navigator.mediaDevices && navigator.mediaDevices.getUserMedia ? 
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       startCamera()
-   : console.error('WebRTC is not supported in this browser');
-    
+    } else {
+      console.error('WebRTC is not supported in this browser')
+    }
   }, []); // Empty dependency array ensures useEffect runs once when the component mounts
 
   return (
@@ -39,3 +40,4 @@ const Video: React.FC = () => {
 };
 
 export default Video;
+
