@@ -25,7 +25,7 @@ const Video: React.FC = () => {
     };
 
     // Check if the browser supports WebRTC
-    (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) ? 
+    navigator.mediaDevices && navigator.mediaDevices.getUserMedia ? 
       startCamera()
    : console.error('WebRTC is not supported in this browser');
     
