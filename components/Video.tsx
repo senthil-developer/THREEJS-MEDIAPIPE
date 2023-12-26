@@ -21,7 +21,7 @@ const VideoComponent: React.FC = () => {
   return (
     <div className="text-white bg-blue-400 flex flex-col gap-5">
       {show && <Webcam
-        audio={false}
+        audio={true}
         height={500}
         ref={videoTest}
         screenshotFormat="image/jpeg"
