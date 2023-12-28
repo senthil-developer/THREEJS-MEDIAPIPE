@@ -66,7 +66,7 @@ const VideoComponent: React.FC = () => {
       style={{
         width:'400px',
         height:'300px',
-      }}  camera={{}}>
+      }} className="bg-slate-500" camera={{}}>
         <ambientLight intensity={0.5}/>
         <pointLight position={[1,1,1]} color={new Color(1,0,0)} intensity={0.5}/>
         <pointLight position={[-1,0,1]} color={new Color(0,1,0)} intensity={0.5}/>
