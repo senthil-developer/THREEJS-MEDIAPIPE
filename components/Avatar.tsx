@@ -28,8 +28,13 @@ export default function Avatar (rotate: Props){
     },[nodes])
 
     useFrame(()=>{
-        // 
-         rotation ? nodes.Head.rotation.set(rotation.x,rotation.y,rotation.z) : 'rotation sucks'
+        if(rotation){
+            headMesh.forEach((mesh)=>{
+                mesh.rotation.set(rotation.x,rotation.y,rotation.z)
+            })
+        }else{
+            console.error('Rotation sucks')
+        }
     })
 //scale 11 y-11 z-0
     return(
