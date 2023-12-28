@@ -12,7 +12,7 @@ type Props = {
 //Mine
 // https://models.readyplayer.me/658ae7bdfc8bec93d064ced4.glb?morphTargets=ARKit&textureAtlas-1024
 
-let headMesh : any
+let headMesh : any[] = []
 export default function Avatar (rotate: Props){
     console.log(rotate)
     const rotation = rotate.rotate
