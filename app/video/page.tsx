@@ -4,7 +4,7 @@ import Video from '@/components/Video'
 
 const page = () => {
   return (
-    <div className='w-full h-full bg-red-500 text-white'>
+    <div className='w-full h-full  text-white'>
       <Video/>
     </div>
   )
