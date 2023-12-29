@@ -73,6 +73,7 @@ function App() {
       audio: false,
     }).then(function (stream) {
       video.srcObject = stream;
+      video.style.transform = "scaleX(-1)"
       video.addEventListener("loadeddata", predict);
     });
   }
