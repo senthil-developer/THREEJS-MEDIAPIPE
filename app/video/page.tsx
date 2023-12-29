@@ -1,11 +1,11 @@
 import React from 'react'
-import Video from '@/components/Video'
+import Test from '@/components/Test'
 
 
 const page = () => {
   return (
     <div className='w-full h-full  text-white'>
-      <Video/>
+      <Test/>
     </div>
   )
 }
