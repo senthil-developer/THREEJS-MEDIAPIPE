@@ -74,7 +74,7 @@ function App() {
     }).then(function (stream) {
       video.srcObject = stream;
       let test = video.style.transform = "scaleX(-1)"
-      test ?video.addEventListener("loadeddata", predict) : 'onnu ella';
+      
     });
   }
   const predict = async () => {
