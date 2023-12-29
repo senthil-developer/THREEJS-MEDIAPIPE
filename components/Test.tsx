@@ -73,8 +73,8 @@ function App() {
       audio: false,
     }).then(function (stream) {
       video.srcObject = stream;
-      video.style.transform = "scaleX(-1)"
-      video.addEventListener("loadeddata", predict);
+      let test = video.style.transform = "scaleX(-1)"
+      test ?video.addEventListener("loadeddata", predict) : 'onnu ella';
     });
   }
   const predict = async () => {
