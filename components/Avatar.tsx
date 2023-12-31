@@ -2,15 +2,13 @@ import { useGLTF } from "@react-three/drei"
 import { useFrame, useGraph } from "@react-three/fiber";
 import { useEffect} from "react";
 import { Euler} from "three";
+import {blendshapes, headMesh,rotation} from './Test'
 
 //https://models.readyplayer.me/6460d95f9ae10f45bffb2864.glb?morphTargets=ARKit&textureAtlas=1024
 
 //Mine
 // https://models.readyplayer.me/658ae7bdfc8bec93d064ced4.glb?morphTargets=ARKit&textureAtlas-1024
 
-let headMesh : any[] = [];
-let blendshapes: any[] = [];
-let rotation : Euler
 
 function Avatar({ url }: { url: string }) {
     const { scene } = useGLTF(url);
