@@ -1,7 +1,5 @@
-import { link } from 'fs';
 import Link from 'next/link'
-import React, { ReactElement } from 'react'
-import { IconType } from 'react-icons';
+import { ReactElement } from 'react';
 import { IoIosMail, IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 type link = 

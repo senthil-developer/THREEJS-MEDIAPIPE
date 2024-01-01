@@ -17,7 +17,7 @@ export default function Home() {
         <source src='/video/clip1.mp4' type='video/mp4'></source>
       </video>
       <video autoPlay playsInline muted loop className='w-40 rounded-xl'>
-        <source src='/video/clip2.mp4' type='video/mp4'></source>
+        <source src='/video/output.mp4' type='video/mp4'></source>
       </video>
      </div>
     </div>
