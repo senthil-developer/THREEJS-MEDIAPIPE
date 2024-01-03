@@ -74,12 +74,12 @@ function App() {
   }, []);
 
   return (
-    <div className="text-center flex flex-col justify-center items-center overflow-hidden w-[430px] h-[768px] rounded-3xl mx-auto ">
+    <div className="text-center flex flex-col justify-center items-center overflow-hidden w-[425px] h-[768px] rounded-3xl mx-auto ">
       <div {...getRootProps({ className: 'm-4 mb-0 rounded-lg  border-2 bg-blue-400 px-2 flex justify-center items-center cursor-pointer' })}>
         <p>Drag & drop RPM avatar GLB file here</p>
       </div>
       <input className='m-4 mb-0 border-2 border-dashed flex justify-center items-center rounded-2xl px-4' type="text" placeholder="Paste RPM avatar URL" onChange={handleOnChange} />
-      <video className='m-4 rounded-2xl w-[425px] h-[300px]' id="video" autoPlay></video>
+      <video className='m-4 rounded-2xl w-[420px] h-[300px]' id="video" autoPlay></video>
       <Canvas style={{ height: 600 }} camera={{ fov: 25 }} shadows>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} color={new Color(1, 1, 0)} intensity={0.5} castShadow />
