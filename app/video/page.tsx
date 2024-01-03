@@ -4,7 +4,7 @@ import Test from '@/components/Test'
 
 const page = () => {
   return (
-    <div className='w-full h-full  text-white'>
+    <div className='w-full h-screen text-white'>
       <Test/>
     </div>
   )

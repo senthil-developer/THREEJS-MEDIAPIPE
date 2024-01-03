@@ -34,7 +34,7 @@ const Footer = () => {
   ]
   return (
     <>
-      <div className="w-full flex flex-col bg-slate-500">
+      <div className="w-full flex flex-col">
         <div className="flex justify-evenly items-center">
           {Links.map((link) => (
             <Link href={link.link} key={link.id} target='_blank' className='flex text items-center gap-2'>
