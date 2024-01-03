@@ -37,17 +37,36 @@ function App() {
     faceLandmarker = await FaceLandmarker.createFromOptions(filesetResolver, option);
 
     video = document.getElementById("video") as HTMLVideoElement;
-    navigator.mediaDevices.getUserMedia({
-      video: { width: 1280, height: 720 },
-      audio: false,
-    }).then(function (stream) {
-      video.style.transform = "scaleX(-1)"
-      video.srcObject = stream;
-      if(video.style.transform === 'scaleX(-1)'){
-      video.addEventListener("loadeddata", predict);
-      }
-    });
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  navigator.mediaDevices.getUserMedia({
+    video: { width: 1280, height: 720 },
+    audio: false,
+  })
+  .then(function (stream) {
+    video.srcObject = stream;
+    video.style.transform = "scaleX(-1)";
+
+    // Check if video dimensions are available
+    if (video.videoWidth && video.videoHeight) {
+      console.log('Video Width:', video.videoWidth);
+      console.log('Video Height:', video.videoHeight);
+
+      // Use the 'canplay' event
+      video.addEventListener('canplay', function () {
+        // Use setTimeout to ensure predict runs after the transformation
+        setTimeout(() => {
+          predict();
+        }, 0);
+      });
+    } else {
+      console.error('Video dimensions not available.');
+    }
+  })
+  .catch(function (error) {
+    console.error('Error accessing webcam:', error);
+  });
+});    
+}
   const predict = async () => {
     let nowInMs = Date.now();
     if (lastVideoTime !== video.currentTime) {
@@ -74,12 +93,12 @@ function App() {
   }, []);
 
   return (
-    <div className="text-center flex flex-col justify-center items-center overflow-hidden w-[425px] h-[768px] rounded-3xl mx-auto ">
-      <div {...getRootProps({ className: 'm-4 mb-0 rounded-lg  border-2 bg-blue-400 px-2 flex justify-center items-center cursor-pointer' })}>
+    <div className="App w-full md:w-[500px]">
+      <div {...getRootProps({ className: 'dropzone w-full md:w-[436px] mx-1' })}>
         <p>Drag & drop RPM avatar GLB file here</p>
       </div>
-      <input className='m-4 mb-0 border-2 border-dashed flex justify-center items-center rounded-2xl px-4' type="text" placeholder="Paste RPM avatar URL" onChange={handleOnChange} />
-      <video className='m-4 rounded-2xl w-[420px] h-[300px]' id="video" autoPlay></video>
+      <input className='url w-full md:w-[436px] mx-1' type="text" placeholder="Paste RPM avatar URL" onChange={handleOnChange} />
+      <video className='camera-feed w-full mx-1 md:w-[468px]' id="video" autoPlay></video>
       <Canvas style={{ height: 600 }} camera={{ fov: 25 }} shadows>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} color={new Color(1, 1, 0)} intensity={0.5} castShadow />
