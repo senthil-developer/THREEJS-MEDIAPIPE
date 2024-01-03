@@ -43,7 +43,7 @@ function App() {
     }).then(function (stream) {
       video.style.transform = "scaleX(-1)"
       video.srcObject = stream;
-      if(video.style.transform === 'scaleX(-1'){
+      if(video.style.transform === 'scaleX(-1)'){
       video.addEventListener("loadeddata", predict);
       }
     });
