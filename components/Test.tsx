@@ -56,7 +56,7 @@ if(video.style.transform ===
 video.addEventListener("loadeddata",
 
 predict);
-
+}
 }
 }
   const predict = async () => {
