@@ -57,7 +57,7 @@ video.addEventListener("loadeddata",
 
 predict);
 }
-}
+})
 }
   const predict = async () => {
     let nowInMs = Date.now();
