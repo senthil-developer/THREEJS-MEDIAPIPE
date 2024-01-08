@@ -37,35 +37,27 @@ function App() {
     faceLandmarker = await FaceLandmarker.createFromOptions(filesetResolver, option);
 
     video = document.getElementById("video") as HTMLVideoElement;
-document.addEventListener("DOMContentLoaded", function () {
-  navigator.mediaDevices.getUserMedia({
-    video: { width: 1280, height: 720 },
-    audio: false,
-  })
-  .then(function (stream) {
-    video.srcObject = stream;
-    video.style.transform = "scaleX(-1)";
+navigator.mediaDevices.getUserMedia({
 
-    // Check if video dimensions are available
-    if (video.videoWidth && video.videoHeight) {
-      console.log('Video Width:', video.videoWidth);
-      console.log('Video Height:', video.videoHeight);
+video: { width: 1280, height: 720 },
 
-      // Use the 'canplay' event
-      video.addEventListener('canplay', function () {
-        // Use setTimeout to ensure predict runs after the transformation
-        setTimeout(() => {
-          predict();
-        }, 0);
-      });
-    } else {
-      console.error('Video dimensions not available.');
-    }
-  })
-  .catch(function (error) {
-    console.error('Error accessing webcam:', error);
-  });
-});    
+audio: false,
+
+}).then(function (stream) {
+
+video.style.transform = "scaleX(-1)"
+
+video.srcObject = stream;
+
+if(video.style.transform ===
+
+'scaleX(-1)') {
+
+video.addEventListener("loadeddata",
+
+predict);
+
+}
 }
   const predict = async () => {
     let nowInMs = Date.now();
