@@ -28,7 +28,7 @@ const Footer = () => {
       id : 3,
       icon :<IoIosMail/>,
       social : 'Email',
-      link : 'mailto:sethildeveloper4@gmail.com'
+      link : 'mailto:senthildeveloper4@gmail.com'
     },
     
   ]
